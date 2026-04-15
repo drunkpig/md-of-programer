@@ -1,6 +1,6 @@
 {
   "name": "mddoc-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate mind map and architecture diagram PNGs from .mmd and .d2 source files",
   "type": "module",
   "bin": {
