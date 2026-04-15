@@ -1,0 +1,84 @@
+---
+description: 在 Markdown 文档里插入脑图或架构图时使用此 skill。用户说"画个脑图/架构图"、"插入图表"时触发。
+---
+
+# design-md
+
+向 Markdown 文档插入图表时，始终遵循以下规则。
+
+## 规则
+
+- 所有图表源文件和 PNG **只放在 `.mddoc/` 目录**（与 Markdown 文件平级）
+- 文件名用**英文小写 + 连字符**（`auth-flow`、`module-overview`），不用中文或序号
+- **先写源文件，再生成 PNG，再插入 Markdown**，顺序不可颠倒
+- Markdown 中**永远不要**直接写 D2 或 markmap 代码块，源文件统一放 `.mddoc/`
+- `.mddoc/` 不存在时先创建
+
+## 脑图（.mmd）
+
+**1. 写源文件** → `.mddoc/<name>.mmd`，格式为 markmap markdown：
+
+```markdown
+# 根节点标题
+
+## 一级分支
+- 叶节点
+- 叶节点
+
+## 一级分支
+- 叶节点
+  - 二级叶节点
+```
+
+**2. 生成 PNG：**
+
+```bash
+mddoc mindmap .mddoc/<name>.mmd
+```
+
+**3. 插入 Markdown：**
+
+```markdown
+![脑图：<描述>](.mddoc/<name>.png)
+*源文件：[<name>.mmd](.mddoc/<name>.mmd)*
+```
+
+## 架构图（.d2）
+
+**1. 写源文件** → `.mddoc/<name>.d2`，格式为 D2 语言：
+
+```d2
+direction: right
+
+client: 客户端 {shape: rectangle}
+gateway: API Gateway {shape: rectangle}
+db: Database {shape: cylinder}
+
+client -> gateway -> db
+```
+
+**2. 生成 PNG：**
+
+```bash
+mddoc arch .mddoc/<name>.d2
+```
+
+**3. 插入 Markdown：**
+
+```markdown
+![架构图：<描述>](.mddoc/<name>.png)
+*源文件：[<name>.d2](.mddoc/<name>.d2)*
+```
+
+## 批量重新生成
+
+```bash
+mddoc build
+```
+
+## 依赖
+
+| 工具 | 安装 |
+|------|------|
+| `mddoc` | `npm install -g mddoc-cli` |
+| `d2`（架构图必须） | https://d2lang.com/tour/install |

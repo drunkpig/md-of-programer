@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:markmap.js.org)",
+      "WebFetch(domain:cairosvg.org)",
+      "WebFetch(domain:crates.io)",
+      "WebFetch(domain:inkscape.org)",
+      "WebFetch(domain:imagemagick.org)",
+      "WebFetch(domain:www.graphicsmagick.org)",
+      "Bash(identify /home/xuchao/workspace/design-md-skills/mddoc-cli/test/.mddoc/sample.png)",
+      "WebFetch(domain:docs.anthropic.com)"
+    ]
+  }
+}

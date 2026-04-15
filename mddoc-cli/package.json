@@ -1,0 +1,39 @@
+{
+  "name": "mddoc-cli",
+  "version": "0.1.0",
+  "description": "Generate mind map and architecture diagram PNGs from .mmd and .d2 source files",
+  "type": "module",
+  "bin": {
+    "mddoc": "bin/mddoc.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "markmap",
+    "d2",
+    "mindmap",
+    "architecture",
+    "diagram",
+    "markdown",
+    "mmdoc"
+  ],
+  "author": "xuchaoo",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "markmap-lib": "^0.17.0",
+    "@resvg/resvg-js": "^2.6.0",
+    "commander": "^12.0.0"
+  }
+}
