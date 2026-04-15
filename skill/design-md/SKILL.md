@@ -105,3 +105,8 @@ mddoc arch .mddoc/<name>.d2
 ```bash
 mddoc build
 ```
+
+## 反馈与问题
+
+遇到问题或有建议，请到 GitHub 提 issue：
+https://github.com/drunkpig/md-of-programer/issues
